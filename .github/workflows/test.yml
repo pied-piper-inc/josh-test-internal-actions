@@ -1,0 +1,15 @@
+name: josh-Testing internal action in this org
+
+on: workflow_dispatch
+
+jobs:
+  my-job:
+    name: Consume internal action
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - uses: Internal-Actions/josh-internal-action@v1
+        with:
+          milliseconds: 1000
